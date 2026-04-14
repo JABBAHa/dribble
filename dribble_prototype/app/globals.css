@@ -1,0 +1,357 @@
+:root {
+  --bg: #020617;
+  --panel: rgba(15, 23, 42, 0.9);
+  --panel-2: rgba(2, 6, 23, 0.78);
+  --border: rgba(51, 65, 85, 0.85);
+  --text: #ffffff;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-2: #a855f7;
+  --success: #34d399;
+  --warning: #fbbf24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.12), transparent 24%),
+    var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.pageShell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.heroText {
+  color: #cbd5e1;
+  max-width: 760px;
+  line-height: 1.55;
+}
+
+.badgeRow,
+.buttonWrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.88);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: #f8fafc;
+  font-size: 0.95rem;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.cardHeader {
+  padding: 20px 20px 0;
+}
+
+.cardTitle {
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.cardBody {
+  padding: 20px;
+}
+
+.scenePanel {
+  min-height: 420px;
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
+  padding: 24px;
+}
+
+.sceneGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.controlColumn,
+.sideColumn,
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelBlock,
+.feedbackBox,
+.requirementCard {
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  padding: 16px;
+}
+
+.compact {
+  padding: 14px 16px;
+}
+
+.panelHeaderRow,
+.statusRow,
+.deviceHeader,
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusRow,
+.sliderHeader,
+.deviceNameRow {
+  justify-content: flex-start;
+}
+
+.muted,
+.helpText,
+.deviceRoom,
+.deviceLabel,
+.requirementText {
+  color: var(--muted);
+}
+
+.helpText,
+.requirementText,
+.heroText {
+  font-size: 0.96rem;
+}
+
+.sectionLabel {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.button {
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 11px 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.buttonPrimary {
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: white;
+}
+
+.buttonSecondary {
+  background: rgba(51, 65, 85, 0.65);
+  border-color: rgba(71, 85, 105, 0.9);
+  color: white;
+}
+
+.buttonFull {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.devicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.deviceTile {
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  padding: 16px;
+  min-height: 126px;
+}
+
+.deviceTileSelected {
+  border-color: rgba(52, 211, 153, 0.95);
+  background: rgba(16, 185, 129, 0.11);
+}
+
+.deviceTileCandidate {
+  border-color: rgba(251, 191, 36, 0.95);
+  background: rgba(251, 191, 36, 0.11);
+}
+
+.deviceName {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.deviceRoom,
+.deviceLabel {
+  font-size: 0.82rem;
+}
+
+.deviceMeta {
+  margin-top: 20px;
+}
+
+.deviceValue,
+.selectedValue,
+.stateValue {
+  margin: 8px 0 0;
+  font-weight: 700;
+}
+
+.deviceValue {
+  font-size: 2rem;
+}
+
+.stateValue {
+  text-transform: capitalize;
+  font-size: 1.15rem;
+}
+
+.feedbackBox {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.rangeInput {
+  width: 100%;
+  accent-color: #38bdf8;
+}
+
+.requirementsGrid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.requirementTitle {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.requirementText {
+  margin: 10px 0 0;
+}
+
+.iconActive {
+  color: var(--success);
+}
+
+.iconWarn {
+  color: var(--warning);
+}
+
+.iconMuted {
+  color: #64748b;
+}
+
+@media (max-width: 1100px) {
+  .mainGrid,
+  .sceneGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .requirementsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .pageShell {
+    padding: 16px;
+  }
+
+  .devicesGrid,
+  .requirementsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    margin-bottom: 18px;
+  }
+
+  .scenePanel,
+  .cardBody {
+    padding: 16px;
+  }
+}
